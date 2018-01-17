@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pixel Art Maker!</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Handlee">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Welcome To <br> Pixel Art Maker</h1>
+    <h3>By Chidera Olibie</h3>
+
+    <h2>Choose Grid Size</h2>
+    <section class="form">
+        Grid Height:
+        <!-- enables user to input number of rows -->
+        <input type="number" class="input" id="input_height" name="height" min="1" value="1"> 
+        Grid Width:
+        <!-- enables user to input number of columns -->
+        <input type="number" class="input" id="input_width" name="width" min="1" value="1">
+        <input type="submit" class="input"  id="submit" value="Create Grid"><br>
+        <input type="submit" class="input"  id="add_row" value="Add Row"><!-- enables the user add extra rows -->
+        <input type="submit" class="input"  id="add_column" value="Add Column"><!-- Enables the user add extra columns -->
+    </section>
+
+    <h2>Pick A Color</h2>
+    <input type="color" id="colorPicker">
+
+    <h2>DESIGN CANVAS</h2>
+    <table id="pixel_canvas">
+    </table>
+
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="designs.js"></script>
+ 
+</body>
+</html>
