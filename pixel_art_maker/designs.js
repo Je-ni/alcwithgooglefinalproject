@@ -21,7 +21,7 @@ $(function (){ //initiation function to start after DOM load
     }
 
         
-    let alert; //creating a global function
+    let alert;
     function alertthis(){ //this function writes an alert statement to create grid
         if (!alert){ //if alert has not been assigned
             msg = "<p class='alert'>Create Grid first!!</p>" //create message, else, dont, so as to avoid multimessages
@@ -34,7 +34,7 @@ $(function (){ //initiation function to start after DOM load
         when extra rows are created, let the event-handler still be bound to them */
         let increment = parseInt(++tableRow, 10); //converts the string to integer
          
-        if ( isNaN(increment) ){ //checks if table has been created             
+        if ( isNaN(increment) || increment == ""){ //checks if table has been created             
             alertthis(); //alert for create table
         } else {
             $("#input_height").val(increment); //increase the input field wrt number of rows
@@ -47,14 +47,14 @@ $(function (){ //initiation function to start after DOM load
     })
     //creating an onclick event to add extra column
     $("#add_column").click(function(){
-        let increment = parseInt(tableColumn, 10);
+        let increment = parseInt(++tableColumn, 10);
         
-        if ( isNaN(increment) ){            
+        if ( isNaN(increment)){            
             alertthis();
         } else {
             $("#input_width").val(increment);
             $(".table_r").append("<td class='table_data'></td>"); //add extra column to each of the rows
-            ++tableColumn; //increment the column by 1 so as to update the number of columns in the tableColumn variable
+            // ++tableColumn; //increment the column by 1 so as to update the number of columns in the tableColumn variable
         }
     })
 
@@ -75,7 +75,6 @@ $(function (){ //initiation function to start after DOM load
     $("#submit").click(function(){
         $(".table_r").remove(); //removes the previous table
         $(".alert").remove();
-        makeGrid(); //makes the grid
-    
+        makeGrid(); //makes the grid  
     }); 
 })
